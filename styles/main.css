@@ -53,10 +53,11 @@ section {
 }
 
 #home .image img {
-    max-width: 200px; /* Adjust the size of the image */
-    border-radius: 10px; /* Optional rounded corners */
+    /* max-width: 200px; Adjust the size of the image */
+    /* border-radius: 10px; Optional rounded corners */
+    max-height: 300px; /* Prevent it from being too tall */
+    border-radius: 10px; /* Optional */
 }
-
 /* Projects sections */
 
 #projects {
