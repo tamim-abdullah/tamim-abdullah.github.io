@@ -1,0 +1,212 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background-color: #000;
+color: #fff;
+font-family: Arial, sans-serif;
+overflow-x: hidden;
+position: relative;
+}
+
+body::before {
+content: "";
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-image:
+    linear-gradient(white 1px, transparent 1px),
+    linear-gradient(90deg, white 1px, transparent 1px);
+background-size: 40px 40px;
+opacity: 0.05;
+z-index: 0;
+pointer-events: none;
+}
+
+section {
+  padding: 4rem;
+  z-index: 1;
+  position: relative;
+}
+
+/* Only apply full height to sections that need it */
+#projects,
+#connect {
+  min-height: 100vh;
+}
+
+h1, h2 {
+margin-bottom: 1rem;
+}
+
+p {
+line-height: 1.6;
+}
+
+#top-banner {
+padding: 2rem;
+font-family: 'Times New Roman', Times, serif;
+font-size: 2rem;
+font-weight: normal;
+text-align: center;
+}
+
+#about {
+justify-content: center;
+width: 100%;
+}
+#about h1 {
+margin-left: 10%;
+font-weight: bold;
+}
+
+.about-text-container {
+  position: relative;
+  width: 70%;
+  margin-left: 10%;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.about-text {
+  width: 70%;
+  padding-left: 2rem;
+  margin-left: 0;  
+  margin-top: 1rem;
+  line-height: 2;
+  text-align: justify;
+  cursor: pointer; /* add for interactivity */
+  position: relative; /* for stacking context */
+  z-index: 2;
+}
+
+
+/* .about-pic {
+  position: absolute;
+  right: -3rem; 
+  top: 1.5rem;
+  width: 200px;
+  opacity: 0;
+  transform: translateY(40px) scale(0.8);
+  pointer-events: none;
+  z-index: 1;
+} */
+
+.about-pic-wrapper {
+  position: relative;
+  width: 200px;
+  height: auto;
+  overflow: hidden;
+}
+
+.color-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.bw-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: grayscale(100%);
+  z-index: 2;
+  pointer-events: none;
+  /* Initially show fully BW */
+  mask-image: radial-gradient(circle 0px at 0 0, transparent 0%, black 100%);
+  -webkit-mask-image: radial-gradient(circle 0px at 0 0, transparent 0%, black 100%);
+  transition: mask-image 0.3s ease;
+}
+
+
+/* Sticky header outside the scroll container */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: black;
+  z-index: 10;
+  padding: 2rem 4rem;
+}
+/* Horizontal scroll area */
+.projects-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 2rem 4rem;
+  scrollbar-width: none;
+}
+.projects-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Horizontal content */
+.project-track {
+  display: inline-flex;
+  gap: 2rem;
+  padding: 2rem 4rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+.project-track::-webkit-scrollbar {
+  display: none;
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  width: 50vw;               /* Each block takes 50% of screen width */
+  height: 320px;             /* Taller blocks */
+  background-color: #111;
+  border: 1px solid white;
+  color: white;
+}
+
+.project img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  border-right: 1px solid white;
+}
+
+.project-details {
+  width: 50%;
+  padding: 1.5rem;
+  text-align: justify;
+  text-wrap: wrap;
+}
+
+.project-details h3 {
+  margin-bottom: 0.5rem;
+}
+
+
+#cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 9999;
+}
+
+
+footer {
+padding: 2rem;
+text-align: center;
+border-top: 1px solid white;
+}
